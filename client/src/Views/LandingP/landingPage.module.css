@@ -1,0 +1,47 @@
+/* landingPage.module.css */
+
+/* Estilos generales */
+@keyframes jump {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+  }
+
+  @keyframes shadowMove {
+    from { text-shadow: 3px 3px 5px rgba(75, 7, 249, 0.839); }
+    to { text-shadow: -3px -3px 5px rgba(75, 7, 249, 0.839); }
+  }  
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    background-image: url('../../Assets/Fondos/FondoLandingP.jpg');
+    background-size: cover;
+       
+  }
+  
+  .title {
+    font-size: 4rem;
+    text-shadow: 3px 3px 5px rgba(243, 247, 10, 0.8);
+    animation: shadowMove 2s infinite alternate;
+    text-align: center;
+    color: rgb(222, 246, 4);
+    font-family: "PikaFont", sans-serif;
+    top: 20%;    
+  }
+  
+  .button {
+    position: absolute;    
+    top: 18%;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-image: url('../../Assets/Logo/pokeball-logo-DC23868CA1-seeklogo.com.png');
+    background-size: cover;
+    margin-top: 30px;    
+    animation: jump 0.5s infinite;       
+  }
+  
