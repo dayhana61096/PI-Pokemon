@@ -5,7 +5,7 @@ const formatPokemon = (pokemonData) => {
   const formattedPokemon = {
     id: pokemonData.id,
     name: pokemonData.name,
-    image: pokemonData.sprites.front_default,
+    image: pokemonData.sprites.other['official-artwork'].front_default,
     vida: pokemonData.stats.find((stat) => stat.stat.name === 'hp').base_stat,
     ataque: pokemonData.stats.find((stat) => stat.stat.name === 'attack').base_stat,
     defensa: pokemonData.stats.find((stat) => stat.stat.name === 'defense').base_stat,

@@ -1,42 +1,4 @@
-// import style from './Card.module.css';
-
-// const Card =(props)=>{
-//     console.log(props)
-//     return(
-//         <div className={style.card}>
-//             <img src={props.image} alt={props.name}/>
-//             <h3>Name:{props.name}</h3>
-//             <h4>Types: </h4>    
-//             {props.types?.map((type)=>(
-//                 <h5>{type.name?type.name:type}</h5>
-//             ))}            
-//         </div>
-//     )  
-// };
-
-
-// export default Card;
-// import style from './Card.module.css';
-// import { Link } from "react-router-dom";
-
-// const Card = (props) => {
-//   console.log(props);
-//   return (
-//     <div className={style.card}>
-//       <Link to={`/detail/${props.id}`}>
-//         <img src={props.image} alt={props.name} />
-//       </Link>
-//       <h3>Name: {props.name}</h3>
-//       <h4>Types: </h4>
-//       {props.types?.map((type) => (
-//         <h5 key={type.name ? type.name : type}>{type.name ? type.name : type}</h5>
-//       ))}
-//     </div>
-//   );
-// };
-
-// export default Card;
-import style from './Card.module.css';
+import styles from './Card.module.css';
 import { Link } from "react-router-dom";
 
 const Card = (props) => {
@@ -51,16 +13,22 @@ const Card = (props) => {
   };
 
   return (
-    <div className={style.card}>
-      <Link to={`/detail/${renderId()}`}>
-        <img src={props.image} alt={props.name} />
-      </Link>
-      <h3>Name: {props.name}</h3>
-      <h4>Types: </h4>
+    <div className={styles.Card}>
+      <div className={styles.name}>{props.name}</div>
+      <div>
+        <img className={styles.img} src={props.image} />
+      </div>
+      <div className={styles.type}>
+        <h4>Tipos</h4>
       {props.types?.map((type) => (
-        <h5 key={type.name ? type.name : type}>{type.name ? type.name : type}</h5>
-      ))}
+        <h5 className={styles.types} key={type.name ? type.name : type}>{type.name ? type.name : type}</h5>
+        ))}
+      </div>
+      <Link to={`/detail/${renderId()}`}>      
+        <button className={styles.buttonD}>Ver</button>      
+      </Link>
     </div>
+    
   );
 };
 

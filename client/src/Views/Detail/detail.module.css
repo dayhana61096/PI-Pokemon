@@ -1,0 +1,135 @@
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('../../Assets/Fondos/450113.png');       
+  }   
+  
+  .Card {
+    display: flex;
+    width: 300px;
+    height: 400px;
+    flex-direction: column;
+    margin-right: 50px;
+    margin-left: 50px;
+    align-items:center;
+    padding: 20px;
+    background-color: #fcd4e4;
+    border: 1px solid lightgray;
+    box-shadow: 2px 2px 8px 4px #bc5c64;
+    border-radius: 15px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;  
+   
+  }
+
+  .Card:hover{
+    transform: translateY(-15px);
+    box-shadow: 0 12px 16px #357b82 ;
+
+  }
+
+  .name{    
+    font-size: 30px;
+    padding: 10px 10px 0 10px;;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+  
+  .characteristics {
+    margin-top: 20px;
+    width: 350px;
+    height: 200px;
+    box-sizing: border-box;
+    box-shadow: 2px 2px 8px 4px #bc5c64;  
+    border: 2px solid #7d431e;
+    border-radius: 0.6em;  
+    background-color: #fcd4e4;
+    font-size: 17px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color:black;
+  }
+  
+  .characteristic {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    margin-top: 15px;
+    margin-left: 16px;
+  }
+  
+  .label {
+    margin-right: 10px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 16px;
+  }
+  
+  .bar {
+    width: 200px; /* Ancho del termómetro o batería */
+    height: 20px; /* Altura del termómetro o batería */
+    background-color: lightgray;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .progress {
+    height: 100%;
+    background-color: #357b82;
+  }
+  
+  .value {
+    margin-left: 10px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 16px;
+  }
+
+  .img {
+    width: 300px;
+    height: auto;
+    margin:auto;     
+   }
+
+   .buttonV{
+    margin-bottom: 5PX;
+    width: 150px;
+    height: 40px;
+    box-sizing: border-box;  
+    border: 2px solid #7d431e;
+    border-radius: 0.6em;  
+    background-color: #bc5c64 ;
+    box-shadow: 2px 2px 8px 4px #bc5c64;
+    font-size: 17px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color:white; 
+    transition-duration: 0.4s; 
+  }
+  
+  .buttonV:hover {
+      background-color: #357b82;
+      color: white;
+  }
+
+  .type{
+    margin-top: 20px;
+    margin-left: 50px;
+    margin-bottom: 5PX;
+    padding: 15px;
+    text-align:center;   
+    width: 250px;
+    height: 160px;
+    box-sizing: border-box;
+    border: 2px solid #7d431e;
+    border-radius: 0.6em;
+    background-color: #bc5c64;
+    box-shadow: 2px 2px 8px 4px #bc5c64;
+    font-size: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+    transition-duration: 0.4s;    
+  }
+
+  .types{
+    font-size: 18px;
+    color: black;
+  }
+  

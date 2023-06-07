@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { getPokemons, searchPokemons, filterPokemonsByType, filterPokemonsByOrigin, orderByName, orderByAttack} from "../../redux/actions/actions";
 import SearchBar from "../../components/SearchBar/searchBar"
 import Paginado from "../../components/Paginado/paginado";
+import styles from "../Home/Home.module.css"
+
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -12,7 +14,7 @@ const Home = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [pokemonsPerPage] = useState(12);
   const [orden, setorden] = useState('');
-  
+    
   const currentPokemons = pokemons.slice(
     (currentPage - 1) * pokemonsPerPage,
     currentPage * pokemonsPerPage
@@ -67,43 +69,73 @@ const Home = () => {
   };
 
   return (
-    <>
-      <h1> Home </h1>
-      <SearchBar onSearch={handleSearch} />
-      <div>
-        <select onChange={handleOrderByName}>
-          <option value="asc"> A-Z </option>
-          <option value="des"> Z-A </option>
-        </select>
-        <select onChange={handleOrderByAttack}>
-          <option value="max">Máximo</option>
-          <option value="min">Mínimo</option>
-        </select>
-        <select onChange={handleOriginFilter}>
-          <option value="All"> Todos </option>
-          <option value="createdBd"> Creados </option>
-          <option value="api"> Existentes </option>
-        </select>
-        <select onChange={handleTypeFilter}>
-          <option value="All"> Todos  </option>
-          <option value="grass"> Grass </option>
-          <option value="poison"> Poison </option>
-          <option value="bug"> Bug </option>
-        </select>            
-        <button onClick={handleClick}> Cargar todos los Pokemons </button>
+    <div className={styles.background}>
+      <div className={styles.container}>
+        <div className={styles.searchBarContainer}>
+          <SearchBar onSearch={handleSearch}/>
+        </div>
+        <div className={styles.item}>
+          <div className={styles.selectContainer}>            
+            <select onChange={handleOrderByName}>
+              <option value="asc"> A-Z </option>
+              <option value="des"> Z-A </option>
+            </select>
+          </div>
+          <div className={styles.selectContainer}>
+            <select onChange={handleOrderByAttack}>
+              <option value="max">Máximo</option>
+              <option value="min">Mínimo</option>
+            </select>
+          </div>
+          <div className={styles.selectContainer}>
+            <select onChange={handleOriginFilter}>
+              <option value="All"> Todos </option>
+              <option value="createdBd"> Creados </option>
+              <option value="api"> Existentes </option>
+            </select>
+          </div>
+          <div className={styles.selectContainer}>
+            <select onChange={handleTypeFilter}>
+              <option value="All"> Todos  </option>
+              <option value="grass"> Grass </option>
+              <option value="poison"> Poison </option>
+              <option value="normal"> Normal </option>
+              <option value="bug"> Bug </option>
+              <option value="fighting"> Fighting </option>
+              <option value="flying"> Flying </option>
+              <option value="ground"> Ground </option>
+              <option value="rock"> Rock </option>
+              <option value="ghost"> Ghost </option>
+              <option value="steel"> Steel </option>
+              <option value="fire"> Fire </option>
+              <option value="water"> Water </option>
+              <option value="electric"> Electric </option>
+              <option value="psychic"> Psychic </option>
+              <option value="ice"> Ice </option>
+              <option value="dragon"> Dragon </option>
+              <option value="dark"> Dark </option>
+              <option value="fairy"> Fairy </option>
+              <option value="unknown"> Unknown </option>
+              <option value="shadow"> Shadow </option>
+            </select>
+          </div>
+        </div>
+          <div className={styles.containerButton}>
+           <button className={styles.button} onClick={handleClick}> Cargar todos </button>
+         </div> 
       </div>
       <CardContainer
         currentPage={currentPage}
         pokemonsPerPage={pokemonsPerPage}        
         pokemons={filteredPokemons.length > 0 ? filteredPokemons : currentPokemons}
       />
-       <Paginado
-          pokemonsPerPage={pokemonsPerPage}
-          pokemons={pokemons.length}
-          paginado={paginado}
-        />
-    </>
-  );
+      <Paginado
+        pokemonsPerPage={pokemonsPerPage}
+        pokemons={pokemons.length}
+        paginado={paginado}
+      />
+    </div>
+  ); 
 };
 
 export default Home;

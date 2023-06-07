@@ -1,0 +1,20 @@
+.paginacion {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    list-style-type: none; 
+  }
+  
+  .number button {
+    padding: 5px 10px;
+    background-color: #ddd;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .number button:hover {
+    background-color: #aaa;
+    color: #fff;
+  }

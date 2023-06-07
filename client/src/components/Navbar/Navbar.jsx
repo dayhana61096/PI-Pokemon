@@ -1,15 +1,14 @@
-import {Link} from 'react-router-dom'
-import style from './Navbar.module.css'
+import styles from './Navbar.module.css'
 
-const Navbar = ()=>{
+const Navbar = () => {
     return (
-        <div className={style.navContainer}>
-            <Link to='/home'>HOME</Link>
-            <Link to='/create'> CREAR POKEMON </Link>
-            <Link to='/'> Salir </Link>
-            
-        </div>
-    )
-};
+      <ul className={styles.navContainer}>
+        <li className={styles.li}><a className={styles.lia}  href="/home">Home</a></li>
+        <li className={styles.li}><a className={styles.lia} href="/create">Crea Tu Pokemón</a></li>
+        <li className={styles.li}><a className={styles.lia} href="/">Salir</a></li>
+      </ul>
+      
+    );
+  };
 
 export default Navbar;

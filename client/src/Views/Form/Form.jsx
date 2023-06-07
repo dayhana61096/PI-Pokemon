@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { postPokemons, getTypes } from "../../redux/actions/actions";
 import { useDispatch, useSelector } from "react-redux";
+import styles from '../Form/form.module.css';
 
 const validate = (form) => {
   const errors = {};
@@ -28,11 +29,15 @@ const validate = (form) => {
 };
 
 const imageOptions = [
-  "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/150.png",
-  "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/200.png",
-  "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/300.png",
-  "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/400.png",
-  "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/280.png",
+  "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/150.png",
+  "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/180.png",
+  "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/190.png",
+  "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/200.png",
+  "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/250.png",
+  "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/390.png",
+  "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/490.png",
+  "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/590.png",
+  "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/650.png",
 ];
 
 export default function CreatedPokemon() {
@@ -132,23 +137,26 @@ export default function CreatedPokemon() {
     Object.keys(errors).length === 0 && form.name && form.vida;
 
   return (
-    <div>
+    <div className={styles.container}>
+      <div className={styles.divH1}>
       <h1>Crea Tu Pokemon</h1>
-      <form onSubmit={handleSubmit}>
+      </div>
+      <form className={styles.form} onSubmit={handleSubmit}>
         <div>
-          <label>Nombre:</label>
+          <label className={styles.label}>Nombre:</label>
           <input
+            className={styles.inputselect}
             type="text"
             value={form.name}
             onChange={handleChange}
             name="name"
           />
-          {errors.name && <p className="error">{errors.name}</p>}
+          {errors.name && <p className={styles.error}>{errors.name}</p>}
         </div>
 
         <div>
-          <label>Imagen:</label>
-          <select onChange={handleImageSelect}>
+          <label className={styles.label} >Imagen:</label>
+          <select className={styles.inputselect} onChange={handleImageSelect}>
             {imageOptions.map((option, index) => (
               <option value={index} key={index}>
                 {`Imagen ${index + 1}`}
@@ -158,30 +166,33 @@ export default function CreatedPokemon() {
         </div>
 
         <div>
-          <label>Vida:</label>
+          <label className={styles.label}>Vida:</label>
           <input
+            className={styles.inputselect}
             type="number"
             value={form.vida}
             onChange={handleChange}
             name="vida"
           />
-          {errors.vida && <p className="error">{errors.vida}</p>}
+          {errors.vida && <p className={styles.error}>{errors.vida}</p>}
         </div>
 
         <div>
-          <label>Ataque:</label>
+          <label className={styles.label}>Ataque:</label>
           <input
+            className={styles.inputselect}
             type="number"
             value={form.ataque}
             onChange={handleChange}
             name="ataque"
           />
-          {errors.ataque && <p className="error">{errors.ataque}</p>}
+          {errors.ataque && <p className={styles.error}>{errors.ataque}</p>}
         </div>
 
         <div>
-          <label>Defensa:</label>
+          <label className={styles.label}>Defensa:</label>
           <input
+            className={styles.inputselect}
             type="number"
             value={form.defensa}
             onChange={handleChange}
@@ -190,8 +201,9 @@ export default function CreatedPokemon() {
         </div>
 
         <div>
-          <label>Velocidad:</label>
+          <label className={styles.label}>Velocidad:</label>
           <input
+            className={styles.inputselect}
             type="number"
             value={form.velocidad}
             onChange={handleChange}
@@ -200,8 +212,9 @@ export default function CreatedPokemon() {
         </div>
 
         <div>
-          <label>Altura:</label>
+          <label className={styles.label}>Altura:</label>
           <input
+            className={styles.inputselect}
             type="number"
             value={form.altura}
             onChange={handleChange}
@@ -210,8 +223,9 @@ export default function CreatedPokemon() {
         </div>
 
         <div>
-          <label>Peso:</label>
+          <label className={styles.label}>Peso:</label>
           <input
+            className={styles.inputselect}
             type="number"
             value={form.peso}
             onChange={handleChange}
@@ -220,22 +234,22 @@ export default function CreatedPokemon() {
         </div>
 
         <div>
-          <label>Tipo:</label>
+          <label className={styles.label}>Tipo:</label>
         </div>
-        <select onChange={handleSelect}>
+        <select className={styles.inputselect} onChange={handleSelect}>
           {types.map((type) => (
             <option key={type.name} value={type.name}>
               {type.name}
             </option>
           ))}
         </select>
-        <ul>
+        <ul className={styles.ul}>
           <li>{form.types.map((el) => el + ", ")}</li>
         </ul>
-        <button type="submit" disabled={!isFormValid}>
+        <button className={styles.button} type="submit" disabled={!isFormValid}>
           Crear Pokemon
         </button>
-        <button type="button" onClick={handleClear}>
+        <button className={styles.button} type="button" onClick={handleClear}>
           Limpiar
         </button>
       </form>

@@ -1,0 +1,83 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image: url('../../Assets/Fondos//1bulbasaur1920x1080.jpg');
+
+  }
+  
+  .form { 
+    background-color: #f2f2f2;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 600px; /* Ajusta el ancho máximo según tus preferencias */
+    margin: 0 auto; /* Centra el formulario horizontalmente */
+    transform: scale(0.9); /* Ajusta el valor de escala según tus preferencias */
+    transform-origin: center;    
+  }
+
+  .divH1{
+    margin-top: 30px;
+    width: 300px;
+    height: 80px;
+    box-sizing: border-box;  
+    border: 2px solid #7d431e;
+    border-radius: 0.6em;  
+    background-color: #bc5c64 ;
+    box-shadow: 2px 2px 8px 4px #bc5c64;
+    font-size: 15px;
+    text-align: center;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color:white;
+  }
+
+  
+  .label {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 18px;
+  } 
+  
+  .inputselect {
+    flex: 1;
+    width: 80%;
+    margin-left: 90px;    
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 8px;
+  }
+  
+  .error {
+    color: red;
+    margin-top: 5px;
+  }
+  
+  .ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  .button {
+    padding: 10px 20px;
+    background-color: #357b82;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .button + button {
+    margin-left: 10px;
+  }
+  
