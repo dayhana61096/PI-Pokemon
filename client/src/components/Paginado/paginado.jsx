@@ -1,7 +1,7 @@
 import React from "react";
 import styles from '../Paginado/paginado.module.css';
 
-export default function Paginado({ pokemonsPerPage, pokemons, paginado }) {
+export default function Paginado({ pokemonsPerPage, pokemons, paginado, }) {
   const pageNumbers = [];
 
   for (let i = 1; i <= Math.ceil(pokemons / pokemonsPerPage); i++) {
